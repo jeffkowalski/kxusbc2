@@ -6537,7 +6537,7 @@
 		(at 213.36 148.59 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6585,7 +6585,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5393554"
+		(property "LCSC" "C5278712"
 			(at 213.36 148.59 0)
 			(effects
 				(font

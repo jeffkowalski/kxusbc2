@@ -5544,7 +5544,7 @@
 		(at 195.58 95.25 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -5584,6 +5584,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 195.58 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1622"
 			(at 195.58 95.25 0)
 			(effects
 				(font
@@ -5770,7 +5779,7 @@
 		(at 273.05 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6165,7 +6174,7 @@
 		(at 195.58 80.01 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6205,6 +6214,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 195.58 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1588"
 			(at 195.58 80.01 0)
 			(effects
 				(font
@@ -6457,7 +6475,7 @@
 		(at 134.62 72.39 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6497,6 +6515,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 134.62 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22855"
 			(at 134.62 72.39 0)
 			(effects
 				(font
@@ -7540,7 +7567,7 @@
 		(at 195.58 102.87 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -7856,7 +7883,7 @@
 		(at 262.89 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)

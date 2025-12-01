@@ -494,7 +494,7 @@
 		(path "/ad6ffa10-2c0b-4d01-9a44-2c1e07078412")
 		(sheetname "/")
 		(sheetfile "kxusbc2.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_rect
 			(start -2.25 -3)
 			(end 2.25 3)
@@ -8586,7 +8586,7 @@
 		(sheetname "/")
 		(sheetfile "kxusbc2.kicad_sch")
 		(zone_connect 2)
-		(attr smd exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
+		(attr smd allow_soldermask_bridges)
 		(fp_circle
 			(center 0 0)
 			(end 3.25 0)
@@ -9098,7 +9098,7 @@
 		(sheetname "/")
 		(sheetfile "kxusbc2.kicad_sch")
 		(zone_connect 2)
-		(attr smd exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
+		(attr smd allow_soldermask_bridges)
 		(fp_circle
 			(center 0 0)
 			(end 3.25 0)
@@ -19737,7 +19737,7 @@
 		(path "/3316adce-2f76-481d-8818-dae18cf998a6")
 		(sheetname "/")
 		(sheetfile "kxusbc2.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_rect
 			(start -2.25 -3)
 			(end 2.25 3)
@@ -26863,7 +26863,7 @@
 		(path "/02a0c3f7-56b3-47b5-84af-c07e1d242808")
 		(sheetname "/")
 		(sheetfile "kxusbc2.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_rect
 			(start -2.25 -3)
 			(end 2.25 3)
@@ -41936,7 +41936,7 @@
 		(path "/2c07c0e1-6f5d-474c-8fb6-49a845a766d7/ad22244b-b7ea-4c88-912c-46c33868dbdc")
 		(sheetname "/Charger/")
 		(sheetfile "kxusbc2_chg.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_line
 			(start -0.146267 -0.51)
 			(end 0.146267 -0.51)
@@ -42405,11 +42405,23 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC" "C1622"
+			(at 0 0 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "ea9f418e-876e-4e54-a40c-623fa06a0250")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/2c07c0e1-6f5d-474c-8fb6-49a845a766d7/38ee2632-dc9d-4431-b9c2-45d54708cbe1")
 		(sheetname "/Charger/")
 		(sheetfile "kxusbc2_chg.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_line
 			(start -0.146267 0.51)
 			(end 0.146267 0.51)
@@ -43028,11 +43040,23 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC" "C22855"
+			(at 0 0 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "22cbd1ee-bd0e-4140-b97e-4c96b002fdd8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "R_*")
 		(path "/2c07c0e1-6f5d-474c-8fb6-49a845a766d7/7250a424-1c6e-40bb-847a-d6bdd613941f")
 		(sheetname "/Charger/")
 		(sheetfile "kxusbc2_chg.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_line
 			(start -0.254724 0.5225)
 			(end 0.254724 0.5225)
@@ -43248,7 +43272,7 @@
 		(path "/2c07c0e1-6f5d-474c-8fb6-49a845a766d7/be5c6108-ae59-46d5-ab44-9143345b5fd3")
 		(sheetname "/Charger/")
 		(sheetfile "kxusbc2_chg.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
 			(end 0.261252 -0.735)
@@ -43448,11 +43472,23 @@
 				(justify mirror)
 			)
 		)
+		(property "LCSC" "C1588"
+			(at 0 0 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "2872f4bc-8dee-4fbd-9afb-0d4c303cce32")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "C_*")
 		(path "/2c07c0e1-6f5d-474c-8fb6-49a845a766d7/5e3fa42e-bf51-441e-989f-3c388c18b389")
 		(sheetname "/Charger/")
 		(sheetfile "kxusbc2_chg.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_line
 			(start -0.146267 0.51)
 			(end 0.146267 0.51)
@@ -43654,7 +43690,7 @@
 				(justify mirror)
 			)
 		)
-		(property "LCSC" "C5393554"
+		(property "LCSC" "C5278712"
 			(at 0 0 0)
 			(layer "B.SilkS")
 			(hide yes)
@@ -43670,7 +43706,7 @@
 		(path "/37db1d3d-769d-42a0-ade2-605c4cf8c994/edd8dee5-b549-46bf-93d0-88d474b44e5e")
 		(sheetname "/uC/")
 		(sheetfile "kxusbc2_uc.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_line
 			(start -2.2 -0.65)
 			(end -1.5 -0.65)
@@ -44009,7 +44045,7 @@
 		(path "/2c07c0e1-6f5d-474c-8fb6-49a845a766d7/470b5e0a-6267-4599-8d6c-3e43ac3fbbca")
 		(sheetname "/Charger/")
 		(sheetfile "kxusbc2_chg.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd)
 		(fp_line
 			(start -0.261252 -0.735)
 			(end 0.261252 -0.735)
