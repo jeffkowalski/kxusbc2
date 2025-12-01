@@ -4676,7 +4676,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "12p"
+		(property "Value" "18p"
 			(at 126.619 114.2421 0)
 			(effects
 				(font
@@ -4712,7 +4712,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C1547"
+		(property "LCSC" "C1549"
 			(at 129.54 113.03 0)
 			(effects
 				(font
@@ -5927,7 +5927,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "12p"
+		(property "Value" "18p"
 			(at 152.781 114.2421 0)
 			(effects
 				(font
@@ -5955,6 +5955,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 149.86 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C1549"
 			(at 149.86 113.03 0)
 			(effects
 				(font
