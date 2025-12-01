@@ -4,7 +4,7 @@
 
 Have you ever forgotten to bring your KX2 charger on a trip, torn the speaker wires after countless battery removals, or found yourself with a dead phone battery on a summit while the KX2 still had plenty of power? I’ve managed all three. Each time, I wished the KX2 simply had a USB-C port — no more removing the battery, no special charger to pack, and the ability to top up a phone.
 
-External power banks are awkward when operating handheld with the AX1. The KXIBC2 option still requires a specific AC adapter, charges very slowly, and cannot supply power to a phone. Perhaps the best solution until now was to bypass the built-in reverse-power diodes and connect an external USB-C charger (see the end of this post). But with all of these solutions, you can forget something at home that you can’t buy on the go.
+External power banks are awkward when operating handheld with the AX1 and may cause QRM. The KXIBC2 option still requires a specific AC adapter, charges very slowly, and cannot supply power to a phone. Perhaps the best solution until now was to bypass the KX2's built-in reverse-power diodes and connect an external USB-C charger. But with all of these solutions, you can forget something at home that you can’t buy on the go.
 
 I prefer fully integrated things that are simple and foolproof to use. So I set out to design an option PCB that installs in place of a KXIBC2 or KXIO2 and adds a bidirectional (dual-role) USB-C port for charging and discharging the internal battery. In homage to Elecraft’s naming convention for KX2 options, I call it the **KXUSBC2** — an unofficial option.
 

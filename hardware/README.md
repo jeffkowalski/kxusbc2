@@ -9,7 +9,7 @@
 * 1 mm thickness
 * all layers (including internal) 1 oz copper
 
-The design around the bq25792 with its inductor and capacitors follows the guidelines given in the datasheet, and takes the EVM design as a basis. However, due to space constraints and the oblong shape, some compromises in the PCB layout had to be made: the bq25792 has been rotated 180° respective to the reference design, making the switching nodes slightly longer and closer to other traces. Care was taken to keep them isolated from other traces by intermediate ground plane layers.
+The design around the BQ25792 with its inductor and capacitors follows the guidelines given in the datasheet, and takes the EVM design as a basis. However, due to space constraints and the oblong shape, some compromises in the PCB layout had to be made: the BQ25792 has been rotated 180° respective to the reference design, making the switching nodes slightly longer and closer to other traces. Care was taken to keep them isolated from other traces by intermediate ground plane layers.
 
 The goal was to design the board such that it could be produced and assembled by low-cost services like JLCPCB (“Economic PCBA”). Only very few components are on the bottom side, and are big enough to be hand-soldered. Traces, via holes etc. are fairly large to avoid precision PCB costs.
 
@@ -30,12 +30,16 @@ The total BOM at qty. 10 is around $25/pc. (including PCB production and assembl
 
 <img src="bq25792_efficiency.png" alt="Conversion efficiency" width="400">
 
-The graph above is taken from the bq25792's datasheet. I've done some casual measurements, both using the bq25792's internal ADC and shunts, and with external power meters, and they agree with the data in the graph: around 95% when charging from 15 V, and between 85% and 90% from 5 V (depending on the current). There seems to be no problem dissipating the maximum possible loss of around 3 W through the side panel (thermal pad between the IC and the panel), and in any case, the charger IC has thermal regulation and shutdown.
+The graph above is taken from the BQ25792's datasheet. I've done some casual measurements, both using the BQ25792's internal ADC and shunts, and with external power meters, and they agree with the data in the graph: around 95% when charging from 15 V, and between 85% and 90% from 5 V (depending on the current). There seems to be no problem dissipating the maximum possible loss of around 3 W through the side panel (thermal pad between the IC and the panel), and in any case, the charger IC has thermal regulation and shutdown.
 
 
 ## Power connection to the KX2
 
 Like the KXIBC2, the KXUSBC2 is intended to be wired to the “E” and “B” pads on the KX2 RFC PCB (under the battery) for connection to the external DC jack and the internal battery jack, respectively. Refer to the [KXIBC2 manual](https://ftp.elecraft.com/KX2/Manuals%20Downloads/E740370-B5,%20KXIBC2%20manual.pdf) for details.
+
+Wire lengths, measured from pad on KXUSBC2 to tip of connector pin attached to wire: E 28 mm, B 40 mm.
+
+Receptacle pins for soldering to KX2 PCB, probably also used by Elecraft for factory installation: Mill-Max 8827-0-15-15-16-27-04-0. Mating pin for crimping or soldering to wire: Mill-Max 3132-0-00-15-00-00-08-0 (for 22-24 AWG).
 
 The PCB trace resistance between the “B” pad on the RF PCB and the central pin on the internal battery connector was measured to be around 5 mΩ (4T/Kelvin measurement). So although the pad/trace were probably not intended for this much current, they should have no problems handling 3 A.
 
@@ -46,6 +50,8 @@ Some people like to use the clock provided by the KXIO2/KXIBC2 options for loggi
 The firmware automatically applies a temperature compensation, and one can also calibrate the clock using the KX2's "RTC ADJ" menu as usual.
 
 Unlike the KXIO2/KXIBC2, the KXUSBC2 does not include a supercapacitor to keep the clock running during short power outages while swapping the battery. Having the KXUSBC2 installed means that most people probably won't need to swap out the battery anymore.
+
+The KX2 uses an SPI frequency of 1 MHz (mode 0), and the delay between asserting RTC_CS (active high) and the beginning of the SPI transmission is about 10 µs.
 
 
 ## Battery monitoring
