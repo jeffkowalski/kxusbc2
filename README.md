@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Have you ever forgotten to bring your KX2 charger on a trip, torn the speaker wires after countless battery removals, or found yourself with a dead phone battery on a summit while the KX2 still had plenty of power? I’ve managed all three. Each time, I wished the KX2 simply had a USB-C port — no more removing the battery, no special charger to pack, and the ability to top up a phone.
+Have you ever forgotten to bring your KX2 charger on a trip, accidentally torn the speaker wires after countless battery removals, or found yourself with a dead phone battery on a summit while the KX2 still had plenty of power? I’ve managed all three. Each time, I wished the KX2 simply had a USB-C port — no more removing the battery, no special charger to pack, and the ability to top up a phone.
 
 External power banks are awkward when operating handheld with the AX1 and may cause QRM. The KXIBC2 option still requires a specific AC adapter, charges very slowly, and cannot supply power to a phone. Perhaps the best solution until now was to bypass the KX2's built-in reverse-power diodes and connect an external USB-C charger. But with all of these solutions, you can forget something at home that you can’t buy on the go.
 
@@ -26,7 +26,7 @@ Here is how it looks installed in a KX2, with a custom CNC-machined aluminum sid
 
 * Adds a bidirectional USB-C charging port to the KX2
 * Charges the internal 3S Li-Ion battery at up to 30 W
-* Dual Role Port (DRP/OTG): Can also charge an external device (phone, GPS, HT etc.) through the same USB-C port at up to 30 W (5…15 V)
+* Dual-Role Port (DRP/OTG): Can also charge an external device (phone, GPS, HT etc.) through the same USB-C port at up to 30 W (5…15 V)
 * Dual input: can charge from USB-C or DC jack
 * Supports PD 3.0, QC, BC1.2
 * Real-Time Clock (RTC)
@@ -48,7 +48,7 @@ Here is how it looks installed in a KX2, with a custom CNC-machined aluminum sid
   * Serial debug console header
 * RTC emulated in MCU (SPI client), backed by crystal, with temperature compensation
 * ~100 µA standby current
-* 4 layer PCB
+* 4-layer PCB
   * Almost all components on top side (min. 0402)
   * Some capacitors and LED on bottom side (can be hand soldered, min. 0603)
 * Replacement aluminum side panel, CNC milled, anodized and silkscreen printed, with USB-C and button pin hole
@@ -69,11 +69,11 @@ Instead of using a replacement side panel, an oblong USB-C hole can also be dril
 
 A first batch of PCBs has been produced and successfully tested by HB9DQM (2025-11-30). Some minor issues and potential improvements to the hardware have been found; see the issues page.
 
-The firmware is working, with PD 3.0 compatibility tested with various sources (AC adapters, power banks) and sinks (mobile phones, tablets). Open tasks circle mainly around ensuring reliability in case of unexpected events (I²C timeouts/errors, watchdog etc.), implementing config button and LED handling, and further reducing standby power consumption. See the issues page for details.
+The firmware is working, with PD 3.0 compatibility tested with various sources (AC adapters, power banks) and sinks (mobile phones, tablets). Remaining open tasks mainly center around ensuring reliability in case of unexpected events (I²C timeouts/errors, watchdog etc.), implementing config button and LED handling, and further reducing standby power consumption. See the issues page for details.
 
 ### Disclaimer
 
-You are using the KXUSBC2 on your own risk; I won't take responsibility if your KX2, phone, charger, battery etc. get fried due to this board, or if you unexpectedly end up with an empty battery. You might lose your warranty on the KX2 by using this board.
+You are using the KXUSBC2 at your own risk; I won't take responsibility if your KX2, phone, charger, battery, etc. get fried due to this board, or if you unexpectedly end up with an empty battery. You might lose your warranty on the KX2 by using this board.
 
 ### License
 
