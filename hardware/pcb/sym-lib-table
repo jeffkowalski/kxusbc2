@@ -5,4 +5,5 @@
   (lib (name "2025-10-27_15-06-55")(type "KiCad")(uri "${KIPRJMOD}/parts/ul_GT-USB-7055A/KiCADv6/2025-10-27_15-06-55.kicad_sym")(options "")(descr ""))
   (lib (name "LP5815DRLR")(type "KiCad")(uri "${KIPRJMOD}/parts/LP5815DRLR/LP5815DRLR.kicad_sym")(options "")(descr ""))
   (lib (name "RT9058-33GV")(type "KiCad")(uri "${KIPRJMOD}/parts/RT9058-33GV/RT9058-33GV.kicad_sym")(options "")(descr ""))
+  (lib (name "DESD5V0U1BL-7B")(type "KiCad")(uri "${KIPRJMOD}/parts/DESD5V0U1BL-7B/DESD5V0U1BL-7B.kicad_sym")(options "")(descr ""))
 )

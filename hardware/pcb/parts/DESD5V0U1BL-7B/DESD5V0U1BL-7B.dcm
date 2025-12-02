@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DESD5V0U1BL-7B
+D ESD Suppressors / TVS Diodes LowCap BiDirectional 1Ch TVS 3A 250mW
+K
+F https://www.diodes.com/datasheet/download/DESD5V0U1BL.pdf
+$ENDCMP
+#
+#End Doc Library
