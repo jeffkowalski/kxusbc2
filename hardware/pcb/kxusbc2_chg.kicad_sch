@@ -2574,16 +2574,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "or AMPLH7025S-1R0MT"
-		(exclude_from_sim no)
-		(at 221.234 100.33 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "45b09152-9f64-4ce4-8fa9-ef6757c6e950")
-	)
 	(junction
 		(at 53.34 109.22)
 		(diameter 0)
@@ -8702,24 +8692,24 @@
 		(dnp no)
 		(uuid "caf5dcff-6e3b-438e-8480-a9bd6ea7e560")
 		(property "Reference" "L1"
-			(at 209.804 96.012 0)
+			(at 211.582 96.774 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "SPM6530T-1R0M-HZ"
-			(at 209.804 98.044 0)
+		(property "Value" "APH0630T1R0M"
+			(at 224.028 98.806 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Footprint" "SPM6530T-1R0M-HZ:IND_SPM6530T-1R0M-HZ"
+		(property "Footprint" "Inductor_SMD:L_APV_APH0630"
 			(at 207.01 97.79 0)
 			(effects
 				(font
@@ -8866,7 +8856,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C404813"
+		(property "LCSC" "C5349700"
 			(at 207.01 97.79 0)
 			(effects
 				(font
