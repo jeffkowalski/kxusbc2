@@ -5,6 +5,7 @@
 #include "bq.h"
 #include "fsc_pd_ctl.h"
 #include "sysconfig.h"
+#include "led.h"
 #include <avr/io.h>
 #include <util/delay.h>
 
@@ -15,11 +16,9 @@ void platform_set_vbus_lvl_enable(FSC_U8 port,
 {
     switch (level) {
     case VBUS_LVL_5V:
-        debug_printf("Enable 5V source: %u\n", enable);
         platform_set_pps_voltage(0, 250);
         break;
     case VBUS_LVL_HV:
-        debug_printf("Enable HV source: %u\n", enable);
         // Do nothing - handled by separate call to platform_set_pps_voltage
         break;
     case VBUS_LVL_ALL:
@@ -81,8 +80,10 @@ void platform_set_pps_voltage(FSC_U8 port, FSC_U16 mv) {
     }
     if (mv > 0) {
         bq_enable_otg(mv);
+        led_set_color(128, 128, 0);
     } else {
         bq_disable_otg();
+        led_set_color(0, 0, 0);
     }
     otg_voltage = mv;
 }

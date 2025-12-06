@@ -3,6 +3,7 @@
 #include "debug.h"
 #include "bq.h"
 #include "kx2.h"
+#include "led.h"
 #include "fsc_pd_ctl.h"
 #include "fsc_pd/timer.h"
 
@@ -21,8 +22,10 @@ void charging_run(bool pd_timer_expired) {
         if (kx2_is_on() && !sysconfig.chargeWhenRigIsOn) {
             debug_printf("Rig is ON - disabling charging\n");
             bq_disable_charging();
+            led_set_color(0, 0, 0);
         } else {
             bq_enable_charging();
+            led_set_color(0, 0, 128);
         }
         // TODO: what if we are in OTG mode?
         return;
@@ -62,11 +65,16 @@ void charging_run(bool pd_timer_expired) {
                 }
                 bq_set_acdrv(true, false);
                 bq_enable_charging();
+                led_set_color(128, 0, 0);
                 TimerDisable(&pd_negotiation_timer);
             }
         }
     } else {
         bq_disable_charging();
+    }
+
+    if (fsc_pd_get_connection_state() == Unattached) {
+        led_set_color(0, 0, 0);
     }
 
     last_connection_state = fsc_pd_get_connection_state();

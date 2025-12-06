@@ -166,7 +166,6 @@ bool bq_process_interrupts(void) {
     
     uint8_t charger_status_0 = bq_read_register(0x1B);
     if (charger_status_0 & 0x04) {
-        debug_printf("BQ AC2_PRESENT_STAT change\n");
         return true;
     }
 

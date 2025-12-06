@@ -24,7 +24,7 @@
 static void bq_print_status(void);
 
 ISR(BADISR_vect) {
-    debug_printf("Bad interrupt\n");
+    //debug_printf("Bad interrupt\n");
 }
 #endif
 
@@ -36,7 +36,7 @@ int main(void) {
     rtc_init();
     button_init();
     twi_init();
-    //led_init();
+    led_init();
     
     debug_printf("Startup, reset flags %x\n", RSTCTRL.RSTFR);
     
@@ -50,12 +50,21 @@ int main(void) {
     fsc_pd_init();
     button_set_short_press_handler(fsc_pd_swap_roles);
 
+    // Power up blink
+    for (uint8_t i = 0; i < 3; i++) {
+        led_set_color(128, 128, 128);
+        _delay_ms(200);
+        led_set_color(0, 0, 0);
+        _delay_ms(200);
+    }
+
     // Enable global interrupts (used for RTC/SPI)
     sei();
 
     ConnectionState lastConnState = 0;
     PolicyState_t lastPolicyState = 0;
     bool last_kx2_on_state = kx2_is_on();
+    uint8_t color = 0;
 #ifdef DEBUG
     uint16_t last_bq_status = 0;
 #endif
@@ -133,20 +142,15 @@ static void bq_print_status(void) {
         pin = -pout;
         pout = temp;
     }
-    uint32_t eff = 0;
-    if (pin != 0 && pout != 0) {
-        eff = pout * 1000 / pin; // 0..1000
-    }
     debug_printf("BQ Status: %d\n", bq_get_charge_status());
     debug_printf("Vbus: %u mV, Ibus: %d mA, limit: %u mV / %u mA\n", vbus, ibus, bq_get_input_voltage_limit(), bq_get_input_current_limit());
     debug_printf("Vbat: %u mV, Ibat: %d mA\n", vbat, ibat);
-    debug_printf("Pin: %ld mW, Pout: %ld mW, eff = %lu.%lu%%\n", pin, pout, eff / 10, eff % 10);
+    debug_printf("Pin: %ld mW, Pout: %ld mW\n", pin, pout);
     if (bq_get_fault_status() != 0) {
         debug_printf("BQ Fault detected: %x\n", bq_get_fault_status());
     }
     if (bq_get_temperature_status() != 0) {
         debug_printf("BQ Temperature warning: %x\n", bq_get_temperature_status());
     }
-    debug_printf("KX2 power state: %s\n", kx2_is_on() ? "ON" : "OFF");
 }
 #endif
