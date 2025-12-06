@@ -64,7 +64,6 @@ int main(void) {
     ConnectionState lastConnState = 0;
     PolicyState_t lastPolicyState = 0;
     bool last_kx2_on_state = kx2_is_on();
-    uint8_t color = 0;
 #ifdef DEBUG
     uint16_t last_bq_status = 0;
 #endif

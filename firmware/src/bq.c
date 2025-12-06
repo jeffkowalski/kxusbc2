@@ -164,8 +164,9 @@ bool bq_process_interrupts(void) {
     }
     bq_interrupt_pending = false;
     
-    uint8_t charger_status_0 = bq_read_register(0x1B);
+    uint8_t charger_status_0 = bq_read_register(0x22);
     if (charger_status_0 & 0x04) {
+        // AC2_PRESENT changed
         return true;
     }
 

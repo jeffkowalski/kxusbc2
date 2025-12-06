@@ -29,6 +29,8 @@ void charging_run(bool pd_timer_expired) {
         }
         // TODO: what if we are in OTG mode?
         return;
+    } else {
+        debug_printf("DC jack input not present\n");
     }
 
     // Are we attached to USB as a sink?
