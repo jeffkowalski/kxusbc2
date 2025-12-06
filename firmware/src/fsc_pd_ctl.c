@@ -2,6 +2,7 @@
 #include "vendor_info.h"
 #include "sysconfig.h"
 #include "charging.h"
+#include "insomnia.h"
 #include "debug.h"
 
 #define FUSB302_I2C_ADDR 0x22
@@ -59,7 +60,6 @@ void fsc_pd_init(void) {
 // Run the state machine. Returns the number of ticks until the next required wakeup, or 0
 // if no timed wakeup is required.
 uint16_t fsc_pd_run(void) {
-    // TODO: run state machine only if interrupt pending or timer expired?
     core_state_machine(&port);
     fsc_pd_enable_interrupt();
     return core_get_next_timeout(&port);
@@ -68,12 +68,13 @@ uint16_t fsc_pd_run(void) {
 void fsc_pd_notify_interrupt(void) {
     // Note: called from ISR context
     // Disable further interrupts until we process this one
-    //debug_printf("FUSB interrupt\n");
     PORTA.PIN5CTRL &= ~PORT_ISC_LEVEL_gc;
+    insomnia_mask |= INSOMNIA_FSC_PD;
 }
 
 void fsc_pd_enable_interrupt(void) {
     // Re-enable FUSB_INT pin interrupt
+    insomnia_mask &= ~INSOMNIA_FSC_PD;
     PORTA.PIN5CTRL |= PORT_ISC_LEVEL_gc;
 }
 

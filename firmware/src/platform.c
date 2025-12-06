@@ -80,7 +80,7 @@ void platform_set_pps_voltage(FSC_U8 port, FSC_U16 mv) {
     }
     if (mv > 0) {
         bq_enable_otg(mv);
-        led_set_color(128, 128, 0);
+        led_set_color(0, 128, 0);
     } else {
         bq_disable_otg();
         led_set_color(0, 0, 0);
