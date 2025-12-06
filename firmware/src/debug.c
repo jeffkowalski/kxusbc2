@@ -54,11 +54,8 @@ static int uart_putchar(char c, FILE *stream) {
 
 #ifdef DEBUG
 void debug_printf(const char *fmt, ...) {
-    uint8_t h, m, s;
-    uint16_t ms;
     va_list args;
-    rtc_get_time_ms(&h, &m, &s, &ms);
-    printf("[%02u:%02u:%02u.%03u] ", h, m, s, ms);
+    printf("[%u] ", rtc_get_ticks());
     va_start(args, fmt);
     vprintf(fmt, args);
     va_end(args);

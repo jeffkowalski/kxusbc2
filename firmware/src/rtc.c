@@ -25,7 +25,6 @@ static volatile bool write = false;
 static volatile uint8_t hours = 0;
 static volatile uint8_t minutes = 0;
 static volatile uint8_t seconds = 0;
-static volatile uint16_t second_start_ticks = 0;
 
 // Offset applied by user via SPI register write (KX2 "RTC ADJ" menu)
 static volatile int16_t user_offset_ppm = 0;
@@ -72,17 +71,10 @@ void rtc_get_time(uint8_t *phours, uint8_t *pminutes, uint8_t *pseconds) {
     *pseconds = seconds;
 }
 
-void rtc_get_time_ms(uint8_t *phours, uint8_t *pminutes, uint8_t *pseconds, uint16_t *pmilliseconds) {
-    *phours = hours;
-    *pminutes = minutes;
-    *pseconds = seconds;
-    uint16_t ticks = rtc_get_ticks() - second_start_ticks;
-    *pmilliseconds = ((uint32_t)ticks * 999) / 1023;
-}
-
 uint16_t rtc_get_ticks(void) {
     uint8_t sreg = SREG;
     cli();  // Disable interrupts to read 16-bit register to prevent TEMP clobbering
+    while (RTC.STATUS & RTC_CNTBUSY_bm); // Wait for sync
     uint16_t count = RTC.CNT;
     SREG = sreg;
     return count;
@@ -163,7 +155,6 @@ ISR(RTC_PIT_vect) {
     RTC.PITINTFLAGS |= RTC_PI_bm; // Clear interrupt flag
 
     // This interrupt occurs every second
-    second_start_ticks = RTC.CNT;
     seconds++;
     if (seconds >= 60) {
         seconds = 0;
