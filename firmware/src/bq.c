@@ -267,7 +267,8 @@ bool bq_set_charge_current_limit(uint16_t charge_current_limit) {
 }
 
 bool bq_set_vbus_discharge(bool discharge) {
-    return bq_set_register_bit(0x16, 0x08, discharge);
+    // Enable both VBUS and VAC1 pull down resistors
+    return bq_set_register_bit(0x16, 0x0C, discharge);
 }
 
 bool bq_set_thermistor(bool enable) {
