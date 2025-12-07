@@ -11,7 +11,7 @@
 #include <avr/io.h>
 
 static ChargerState current_state;
-static ChargerState last_state;
+static ChargerState last_state_led;
 static uint16_t otg_voltage;
 static uint16_t otg_current;
 static struct TimerObj state_timer;
@@ -46,7 +46,6 @@ static uint16_t handle_fault(void);
 
 bool charger_sm_init(void) {
     current_state = CHARGER_DISCONNECTED;
-    last_state = CHARGER_DISCONNECTED;
     otg_voltage = 0;
     otg_current = 0;
     TimerDisable(&state_timer);
@@ -398,11 +397,10 @@ static void set_state(ChargerState new_state) {
         return;
     }
 
-    ChargerState previousState = current_state;
-    last_state = current_state;
+    ChargerState previous_state = current_state;
     current_state = new_state;
 
-    debug_printf("SM: State transition %d -> %d\n", previousState, new_state);
+    debug_printf("SM: State transition %d -> %d\n", previous_state, new_state);
 
     // Disable any active timers when changing state
     TimerDisable(&state_timer);
@@ -437,13 +435,13 @@ static void set_state(ChargerState new_state) {
 static void update_led_for_state(void) {
     switch (current_state) {
         case CHARGER_FAULT:
-            if (current_state != last_state) {
+            if (current_state != last_state_led) {
                 led_set_blinking(255, 0, 0, 128, 2, 2, 15, 0);  // Red blinking at 5 Hz
             }
             break;
 
         case CHARGER_USB_NEGOTIATING:
-            if (current_state != last_state) {
+            if (current_state != last_state_led) {
                 led_set_blinking(0, 255, 0, 128, 2, 2, 15, 0);  // Green blinking at 5 Hz
             }
             break;
@@ -451,25 +449,29 @@ static void update_led_for_state(void) {
         case CHARGER_USB_TYPE_C_CHARGING:
         case CHARGER_USB_PD_CHARGING:
         case CHARGER_DC_CHARGING:
+            // Always update, even if the state hasn't changed, as the temperature may have
             handle_charging_temperature_led();
             break;
 
         case CHARGER_RIG_ON:
-            if (current_state != last_state) {
+            if (current_state != last_state_led) {
                 led_set_color(255, 0, 255);  // Magenta - Rig powered
             }
             break;
 
         case CHARGER_DISCHARGING:
+            // Always update, even if the state hasn't changed, as the temperature may have
             handle_charging_temperature_led();
             break;
 
         default:
-            if (current_state != last_state) {
+            if (current_state != last_state_led) {
                 led_set_color(0, 0, 0);
             }
             break;
     }
+
+    last_state_led = current_state;
 }
 
 static void handle_charging_temperature_led(void) {
