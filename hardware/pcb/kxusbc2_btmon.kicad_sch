@@ -5,6 +5,7 @@
 	(uuid "bac412b3-7d35-4a83-b9ae-ca77fef16a64")
 	(paper "A4")
 	(title_block
+		(title "Battery monitor")
 		(comment 1 "CC BY-SA 4.0")
 		(comment 2 "© 2025 HB9DQM")
 	)

@@ -5,6 +5,7 @@
 	(uuid "ac91b85c-9c40-40c8-8b2a-3f3f4fdb03d6")
 	(paper "A4")
 	(title_block
+		(title "Charger")
 		(comment 1 "CC BY-SA 4.0")
 		(comment 2 "© 2025 HB9DQM")
 	)

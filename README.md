@@ -53,6 +53,8 @@ Here is how it looks installed in a KX2, with a custom CNC-machined aluminum sid
   * Components on both sides (min. 0402)
 * Replacement aluminum side panel, CNC milled, anodized and silkscreen printed, with USB-C and button pin hole
 
+For more information and a PDF schematic, see the [hardware notes](hardware/README.md).
+
 
 ## Installation
 
@@ -65,6 +67,11 @@ Installing the KXUSBC2 is quite simple, and similar to the procedure for the KXI
 * Install the replacement left side panel (4 screws).
 
 Instead of using a replacement side panel, an oblong USB-C hole can also be drilled into the original side panel.
+
+
+## Development
+
+The schematic/PCB was designed with KiCad, and the firmware was written to be compiled with AVR-GCC. See the [hardware notes](hardware/README.md) and [firmware notes](firmware/README.md) for details.
 
 
 ## Current state of the project

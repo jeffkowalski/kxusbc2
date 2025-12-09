@@ -1,5 +1,12 @@
 # Hardware notes
 
+## Schematic
+
+Designed with KiCad.
+
+**[PDF version of the schematic](pcb/kxusbc2.pdf)** for quick viewing (may not be the most recent version).
+
+
 ## PCB
 
 ### Specifications
