@@ -26,7 +26,8 @@ struct SysConfig {
     uint16_t otgCurrentLimit;       // mA, in OTG mode, range 120-3320
     bool chargeWhenRigIsOn;
     bool enableThermistor;
-    int8_t rtcOffset;               // RTC offset in ppm
+    int8_t factoryRtcOffset;        // factory calibrated RTC offset in ppm (-127 to +127)
+    int16_t userRtcOffset;          // user RTC offset in ppm, set via KX2 RTC ADJ menu (-278 to +273)
 };
 
 extern struct SysConfig sysconfig;

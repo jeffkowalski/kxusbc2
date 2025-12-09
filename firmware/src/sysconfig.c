@@ -11,7 +11,8 @@ static EEMEM struct SysConfig sysconfig_eeprom = {
     .otgCurrentLimit = 3000,
     .chargeWhenRigIsOn = false,
     .enableThermistor = false,
-    .rtcOffset = 0
+    .factoryRtcOffset = 0,
+    .userRtcOffset = 0
 };
 
 struct SysConfig sysconfig;

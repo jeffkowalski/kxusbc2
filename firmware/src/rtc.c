@@ -27,9 +27,6 @@ static volatile uint8_t hours = 0;
 static volatile uint8_t minutes = 0;
 static volatile uint8_t seconds = 0;
 
-// Offset applied by user via SPI register write (KX2 "RTC ADJ" menu)
-static volatile int16_t user_offset_ppm = 0;
-
 // Offset applied by temperature compensation 
 static volatile int16_t temperature_offset_ppm = 0;
 
@@ -118,14 +115,17 @@ static void rtc_measure_temperature_offset(void) {
 }
 
 static void rtc_update_calib(void) {
-    int16_t total_offset = user_offset_ppm + sysconfig.rtcOffset + temperature_offset_ppm;
+    int16_t total_offset = sysconfig.userRtcOffset + sysconfig.factoryRtcOffset + temperature_offset_ppm;
 
     // Clamp to RTC.CALIB range of -127 to 127
-    if (total_offset < -127) total_offset = -127;
-    if (total_offset > 127) total_offset = 127;
+    if (total_offset < -127) {
+        total_offset = -127;
+    } else if (total_offset > 127) {
+        total_offset = 127;
+    }
 
-    debug_printf("RTC calibration update: user %d ppm, sysconfig %d ppm, temp %d ppm => total %d ppm\n",
-                 user_offset_ppm, sysconfig.rtcOffset, temperature_offset_ppm, total_offset);
+    debug_printf("RTC calibration update: user %d ppm, factory %d ppm, temp %d ppm => total %d ppm\n",
+                 sysconfig.userRtcOffset, sysconfig.factoryRtcOffset, temperature_offset_ppm, total_offset);
 
     // CALIB does not use two's complement, but a sign bit + magnitude
     if (total_offset < 0) {
@@ -219,7 +219,13 @@ ISR(SPI0_INT_vect) {
             }
 
             // The offset is given in units of 4.34 ppm (see PCF2123 datasheet, page 29).
-            user_offset_ppm = ((int16_t)offset * 434) / 100;
+            sysconfig.userRtcOffset = ((int16_t)offset * 434) / 100;
+
+            // Store the offset in our EEPROM. The KX2 will store it on its own as well, but
+            // will not send it back to us on its own - only when the user goes back into the
+            // RTC ADJ menu and changes it.
+            sysconfig_write();
+
             rtc_update_calib();
         }
         SPI0.DATA = 0x00;
