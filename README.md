@@ -85,16 +85,15 @@ The firmware is working, with PD 3.0 compatibility tested with various sources (
 
 You are using the KXUSBC2 at your own risk; I won't take responsibility if your KX2, phone, charger, battery, etc. get fried due to this board, your house burns down, or if you unexpectedly end up with an empty battery. You might lose your warranty on the KX2 by using this board.
 
+Elecraft ® is a registered trademark of Elecraft, Inc. This project is not affiliated with or endorsed by Elecraft.
+
 
 ### License
 
-[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+© 2025 Manuel Kasper HB9DQM.
 
-This work is licensed under a
-[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+This source describes Open Hardware and is licensed under the CERN-OHL-W v2.
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+You may redistribute and modify this documentation and make products using it under the terms of the CERN-OHL-W v2 (https:/cern.ch/cern-ohl). This documentation is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN-OHL-W v2 for applicable conditions.
 
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+Source location: https://github.com/manuelkasper/kxusbc2

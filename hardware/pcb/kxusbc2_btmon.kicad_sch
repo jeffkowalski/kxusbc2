@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "Battery monitor")
-		(comment 1 "CC BY-SA 4.0")
+		(comment 1 "Licensed under CERN-OHL-W v2")
 		(comment 2 "© 2025 HB9DQM")
 	)
 	(lib_symbols

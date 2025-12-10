@@ -5,8 +5,8 @@
 	(uuid "e3f9e6db-4c7d-434c-85a0-9bad2f7edcde")
 	(paper "A4")
 	(title_block
-		(title "KX2USBC – Internal USB-C charger for the Elecraft KX2")
-		(comment 1 "CC BY-SA 4.0")
+		(title "KXUSBC2 – Internal USB-C charger for the Elecraft KX2")
+		(comment 1 "Licensed under CERN-OHL-W v2")
 		(comment 2 "© 2025 HB9DQM")
 	)
 	(lib_symbols
@@ -1606,7 +1606,7 @@
 			(uuid "15ceabe4-1986-4bdc-957c-f40d60188c65")
 		)
 		(instances
-			(project "kx2usbc"
+			(project "kxusbc2"
 				(path "/e3f9e6db-4c7d-434c-85a0-9bad2f7edcde"
 					(reference "J8")
 					(unit 1)
