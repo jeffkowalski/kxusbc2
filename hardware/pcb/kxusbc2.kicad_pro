@@ -80,6 +80,14 @@
           ""
         ],
         [
+          "lib_footprint_mismatch|160200000|107700000|0b7c607d-e7f5-4257-bd10-c815a6541e2b|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "lib_footprint_mismatch|160200000|111500000|41d7e257-445f-4e07-9db2-c3bdc4723e30|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
           "lib_footprint_mismatch|166986000|111430000|06967332-4a9c-44e0-b5e0-3c8618123c3c|00000000-0000-0000-0000-000000000000",
           ""
         ]
@@ -148,7 +156,7 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.1,
+        "min_clearance": 0.15,
         "min_connection": 0.1,
         "min_copper_edge_clearance": 0.3,
         "min_groove_width": 0.0,
