@@ -10,6 +10,7 @@ static EEMEM struct SysConfig sysconfig_eeprom = {
     .dcInputCurrentLimit = 3000,
     .otgCurrentLimit = 3000,
     .dischargingVoltageLimit = 9000,
+    .otgVoltageHeadroom = 100,
     .chargeWhenRigIsOn = false,
     .enableThermistor = false,
     .factoryRtcOffset = 0,

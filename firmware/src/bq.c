@@ -216,10 +216,6 @@ bool bq_enable_otg(uint16_t votg) {
         return false;
     }
 
-    // Add 100 mV, as the BQ output tends to be a bit on the low side,
-    // and we'll lose a few millivolts under load in the MOSFETs and traces as well.
-    votg += 100;
-
     // Set output voltage (VOTG)
     success &= bq_write_register16(0x0B, (votg - 2800) / 10);
 

@@ -79,12 +79,15 @@ The following settings can be set in the EEPROM (see also the definitions in htt
 | 6 | DC input current limit (mA, from DC jack) | `uint16` | 3000 | 100…3300
 | 8 | OTG current limit (mA, output to USB) | `uint16` | 3000 | 120…3320
 | 10 | Discharging voltage limit (mV, minimum battery voltage for OTG mode) | `uint16` | 9000 |
-| 12 | Allow charging while rig is on | `bool` | 0
-| 13 | Enable thermistor | `bool` | 0
-| 14 | Factory RTC offset (ppm) | `int8` | 0 | -127…127
-| 15 | User RTC offset (ppm, set in KX2 RTC ADJ menu) | `int16` | 0 | -278…+273
+| 12 | OTG voltage headroom (mV, will be added to output voltage) | `uint16` | 100 | 0…500
+| 14 | Allow charging while rig is on | `bool` | 0
+| 15 | Enable thermistor | `bool` | 0
+| 16 | Factory RTC offset (ppm) | `int8` | 0 | -127…127
+| 17 | User RTC offset (ppm, set in KX2 RTC ADJ menu) | `int16` | 0 | -278…+273
 
 Note that the AVR is a little endian platform, e.g. the value 3000 would be represented as 0xB80B in EEPROM.
+
+The OTG voltage headroom can be used to compensate for losses in the MOSFETs, PCB traces, cable etc.
 
 ## RTC emulation
 

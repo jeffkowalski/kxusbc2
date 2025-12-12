@@ -25,6 +25,7 @@ struct SysConfig {
     uint16_t dcInputCurrentLimit;     // mA, input from DC jack (VAC2), range 100-3300
     uint16_t otgCurrentLimit;         // mA, in OTG mode, range 120-3320
     uint16_t dischargingVoltageLimit; // mV, min. battery voltage for OTG mode
+    uint16_t otgVoltageHeadroom;      // mV, voltage to be added in OTG mode to compensate for drop
     bool chargeWhenRigIsOn;
     bool enableThermistor;
     int8_t factoryRtcOffset;          // factory calibrated RTC offset in ppm (-127 to +127)

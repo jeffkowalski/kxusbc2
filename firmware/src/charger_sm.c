@@ -113,7 +113,12 @@ void charger_sm_on_pps_voltage_update(uint16_t mv) {
             otg_current = sysconfig.otgCurrentLimit;
             bq_set_otg_current_limit(otg_current);
         }
-        bq_enable_otg(otg_voltage);
+        uint16_t otg_voltage_eff = otg_voltage;
+        if (sysconfig.otgVoltageHeadroom <= 500) {
+            // Limit headroom for safety
+            otg_voltage_eff += sysconfig.otgVoltageHeadroom;
+        }
+        bq_enable_otg(otg_voltage_eff);
         set_state(CHARGER_DISCHARGING);
     } else {
         // OTG mode ended
