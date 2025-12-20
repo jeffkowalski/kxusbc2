@@ -2,7 +2,12 @@
 DEBUG ?= 0
 MCU = attiny3226
 PROGRAMMER = serialupdi
+ifeq ($(shell uname),Linux)
+# Auto-detect QinHeng Electronics (vendor = 1a86) CH340-based UPDI programmer (e.g. Adafruit HV UPDI Friend http://adafru.it/5893)
+PORT ?= $(firstword $(wildcard /dev/serial/by-id/usb-1a86_USB_Serial*))
+else
 PORT = /dev/cu.usbserial-20120
+endif
 F_CPU = 20000000
 ifeq ($(DEBUG),1)
 OBJDIR = build/debug
